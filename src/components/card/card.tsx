@@ -13,7 +13,7 @@ const Card: React.FC<{
 
   return (
     <div
-      className={`bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 ${className}`}
+      className={`bg-white dark:bg-gray-800 shadow-xl/30 rounded-lg p-4 ${className}`}
       onClick={handleFlip}
     >
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
