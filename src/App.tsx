@@ -1,5 +1,7 @@
 import Card from './components/card/card'
 import kanji from './assets/kanji/n5.json'
+import KanjiCard from './components/card/kanji'
+import MeaningCard from './components/card/meaning'
 
 function App() {
   return (
@@ -13,35 +15,8 @@ function App() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {kanji.map((item, index) => (
           <Card key={index} className="hover:cursor-pointer">
-            <div className="flex flex-col items-center justify-center">
-              <p className="text-4xl font-bold text-center">{item.kanji}</p>
-              <div className="mt-2">
-                <div className="flex flex-row items-stretch justify-center">
-                  {item.read.map((reading, i) => (
-                    <div
-                      key={i}
-                      className="bg-green-200 rounded-full px-3 py-1 m-1"
-                    >
-                      <p className="text-sm text-black">{reading}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center mt-2">
-              <p className="font-semibold">Meanings:</p>
-              <div className="flex flex-row items-stretch justify-center">
-                {item.meaning.map((meaning, i) => (
-                  <div
-                    key={i}
-                    className="bg-red-200 rounded-full px-3 py-1 m-1"
-                  >
-                    <p className="text-sm text-black">{meaning}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <KanjiCard item={item} />
+            <MeaningCard item={item} />
           </Card>
         ))}
       </div>
