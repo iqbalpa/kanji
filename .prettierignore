@@ -1,0 +1,17 @@
+build/
+website/build/
+schemas/
+apis/
+.widdershins/
+hooks/
+build/
+node_modules/
+internals/generators/
+internals/scripts/
+package.json
+bun.lock
+
+build
+coverage
+
+**/*.html

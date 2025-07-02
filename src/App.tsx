@@ -1,5 +1,5 @@
-import Card from "./components/card/card";
-import kanji from "./assets/kanji/n5.json";
+import Card from './components/card/card'
+import kanji from './assets/kanji/n5.json'
 
 function App() {
   return (
@@ -8,9 +8,7 @@ function App() {
         {kanji.map((item, index) => (
           <Card key={index} className="hover:cursor-pointer">
             <div className="flex flex-col items-center justify-center">
-              <p className="text-4xl font-bold text-center">
-                {item.kanji}
-              </p>
+              <p className="text-4xl font-bold text-center">{item.kanji}</p>
               <div className="mt-2">
                 <ul className="list-disc list-inside">
                   {item.read.map((reading, i) => (
@@ -19,7 +17,7 @@ function App() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="mt-2">
               <p className="font-semibold">Meanings:</p>
               <ul className="list-disc list-inside">
@@ -32,7 +30,7 @@ function App() {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
