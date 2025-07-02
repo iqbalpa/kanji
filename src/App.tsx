@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="w-full min-h-screen bg-black px-4 sm:px-6 md:px-10 pb-20 overflow-x-hidden">
       <Header />
-      <h1 className="text-4xl font-bold text-gray-100 text-center mb-5">
+      <h1 className="text-4xl font-bold text-gray-100 text-center mb-5 mt-8 sm:mt-10">
         Japanese Kanji
       </h1>
       <h2 className="text-2xl font-semibold text-gray-100 text-center mb-8">
