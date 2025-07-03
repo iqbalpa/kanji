@@ -1,8 +1,9 @@
-import Card from './components/card/card'
-import kanji from './assets/kanji/n5.json'
-import KanjiCard from './components/card/kanji'
-import MeaningCard from './components/card/meaning'
+import n5 from './assets/kanji/n5.json'
+import n4 from './assets/kanji/n4.json'
 import { Header } from './components/header/header'
+import { Route, Routes } from 'react-router'
+import KanjiModule from './modules/level'
+import NoMatch from './modules/noMatch'
 
 function App() {
   return (
@@ -14,14 +15,15 @@ function App() {
       <h2 className="text-2xl font-semibold text-gray-100 text-center mb-8">
         Help you memorize Kanji!
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {kanji.map((item, index) => (
-          <Card key={index} className="hover:cursor-pointer">
-            <KanjiCard item={item} />
-            <MeaningCard item={item} />
-          </Card>
-        ))}
-      </div>
+
+      <Routes>
+        <Route index element={<KanjiModule kanji={n5} />} />
+        <Route path="n5" element={<KanjiModule kanji={n5} />} />
+        <Route path="n4" element={<KanjiModule kanji={n4} />} />
+        <Route path="n3" element={<NoMatch level="N3" />} />
+        <Route path="n2" element={<NoMatch level="N2" />} />
+        <Route path="n1" element={<NoMatch level="N1" />} />
+      </Routes>
     </div>
   )
 }
