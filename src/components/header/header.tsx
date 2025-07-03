@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router'
 
 const navItems = ['N5', 'N4', 'N3', 'N2', 'N1']
 
@@ -23,15 +24,15 @@ export const Header: React.FC = () => {
           }`}
         >
           {navItems.map((item, _) => (
-            <a
+            <Link
               key={item}
-              href={`/${item.toLowerCase()}`}
+              to={`/${item.toLowerCase()}`}
               className={`hover:text-white font-bold whitespace-nowrap transition-colors duration-200 text-center ${
-                item === 'Home' ? 'text-emerald-400 font-medium' : ''
+                item === 'N5' ? 'text-emerald-400 font-extrabold' : ''
               }`}
             >
               {item}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
