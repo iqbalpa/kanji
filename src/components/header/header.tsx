@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
 
 const navItems = ['N5', 'N4', 'N3', 'N2', 'N1']
 
@@ -24,15 +24,19 @@ export const Header: React.FC = () => {
           }`}
         >
           {navItems.map((item, _) => (
-            <Link
+            <NavLink
               key={item}
               to={`/${item.toLowerCase()}`}
-              className={`hover:text-white font-bold whitespace-nowrap transition-colors duration-200 text-center ${
-                item === 'N5' ? 'text-emerald-400 font-extrabold' : ''
-              }`}
+              className={({ isActive }) =>
+                `text-md md:text-lg font-bold whitespace-nowrap transition-colors hover:scale-125 duration-500 text-center ${
+                  isActive
+                    ? 'text-emerald-400 hover:text-emerald-300 font-extrabold'
+                    : 'hover:text-white'
+                }`
+              }
             >
               {item}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </nav>
