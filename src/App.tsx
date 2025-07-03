@@ -3,6 +3,7 @@ import n4 from './assets/kanji/n4.json'
 import { Header } from './components/header/header'
 import { Route, Routes } from 'react-router'
 import KanjiModule from './modules/level'
+import NoMatch from './modules/noMatch'
 
 function App() {
   return (
@@ -19,19 +20,9 @@ function App() {
         <Route index element={<KanjiModule kanji={n5} />} />
         <Route path="n5" element={<KanjiModule kanji={n5} />} />
         <Route path="n4" element={<KanjiModule kanji={n4} />} />
-        <Route
-          path="n3"
-          element={
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-100 text-center mb-8">
-                N3 Level Kanji Coming Soon!
-              </h2>
-              <p className="text-gray-400 text-center">
-                Stay tuned for more levels!
-              </p>
-            </div>
-          }
-        />
+        <Route path="n3" element={<NoMatch level="N3" />} />
+        <Route path="n2" element={<NoMatch level="N2" />} />
+        <Route path="n1" element={<NoMatch level="N1" />} />
       </Routes>
     </div>
   )
